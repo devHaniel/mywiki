@@ -4,19 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Guía informativa sobre la suspensión condicional de la ejecución de la pena de prisión en Honduras.">
-  <meta name="theme-color" content="#153a35">
+  <meta name="theme-color" content="#f8f9fa">
   <title>Suspensión de la ejecución de la pena | Guía legal de Honduras</title>
   <style>
     :root {
       color-scheme: light;
-      --ink: #1c2b29;
-      --muted: #526461;
+      --ink: #202122;
+      --muted: #54595d;
       --paper: #fff;
-      --canvas: #f3f6f4;
-      --green: #153a35;
-      --accent: #c76b3d;
-      --line: #dce5e0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --canvas: #f8f9fa;
+      --link: #0645ad;
+      --line: #a7d7f9;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     * { box-sizing: border-box; }
@@ -25,100 +24,280 @@
       margin: 0;
       background: var(--canvas);
       color: var(--ink);
-      line-height: 1.7;
+      line-height: 1.6;
     }
 
-    a { color: #155e54; }
-    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+    a { color: var(--link); }
+    a:visited { color: #0b0080; }
+    a:focus-visible { outline: 2px solid #36c; outline-offset: 2px; }
 
-    .hero {
-      background: var(--green);
-      color: #fff;
-      padding: 3.5rem 1.25rem 3rem;
-    }
-
-    .hero-inner, main, footer {
-      width: min(100% - 2rem, 780px);
+    .page {
+      display: grid;
+      grid-template-columns: 180px minmax(0, 1fr);
+      gap: 1.5rem;
+      width: min(100% - 2rem, 1200px);
       margin-inline: auto;
+      padding-top: 1.5rem;
     }
 
-    .eyebrow {
-      color: #c5dbd2;
-      font-size: .82rem;
+    .sidebar {
+      align-self: start;
+      padding: 1rem .5rem;
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    .sidebar-title {
+      margin: 0 0 .4rem;
+      padding-bottom: .3rem;
+      border-bottom: 1px solid #c8ccd1;
+      color: var(--ink);
       font-weight: 700;
-      letter-spacing: .12em;
-      text-transform: uppercase;
+    }
+
+    .sidebar ul {
+      margin: 0 0 1.25rem;
+      padding-left: 1rem;
+      list-style: none;
+    }
+
+    .sidebar li { margin: .25rem 0; }
+    .sidebar a { text-decoration: none; }
+    .sidebar a:hover { text-decoration: underline; }
+
+    .content {
+      min-width: 0;
+      padding: 0 1.5rem 2rem;
+      border: 1px solid #a7d7f9;
+      background: var(--paper);
+    }
+
+    .page-tools {
+      display: flex;
+      justify-content: flex-end;
+      gap: .75rem;
+      padding: .6rem 0;
+      border-bottom: 1px solid #c8ccd1;
+      color: var(--muted);
+      font-size: .82rem;
+    }
+
+    .page-tools span:first-child { color: var(--ink); }
+
+    .page-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      padding: 1.25rem 0 .75rem;
+      border-bottom: 1px solid #a2a9b1;
     }
 
     h1 {
-      max-width: 700px;
-      margin: .65rem 0 1rem;
-      font-size: clamp(2rem, 6vw, 3.5rem);
-      line-height: 1.1;
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.8rem, 4vw, 2.2rem);
+      font-weight: 400;
+      line-height: 1.2;
     }
 
-    .hero p { max-width: 650px; margin: 0; color: #e3eeea; font-size: 1.1rem; }
+    .page-icon { width: 90px; height: 90px; flex: 0 0 auto; }
 
-    main { padding-block: 2rem 3rem; }
+    .subtitle { margin: .65rem 0 1.25rem; color: var(--muted); font-size: .95rem; }
 
-    .summary, article, .notice {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: clamp(1.25rem, 4vw, 2rem);
-      box-shadow: 0 8px 24px rgb(21 58 53 / 5%);
+    main { padding-bottom: 1rem; }
+
+    .contents {
+      display: table;
+      margin: 0 0 1.25rem;
+      padding: .6rem 1rem;
+      border: 1px solid #a2a9b1;
+      background: #f8f9fa;
+      font-size: .92rem;
     }
 
-    .summary { border-left: 5px solid var(--accent); margin-bottom: 1.25rem; }
-    .summary p:last-child, article p:last-child { margin-bottom: 0; }
-    article { margin-top: 1.25rem; }
-    h2 { margin: 0 0 .75rem; color: var(--green); font-size: 1.45rem; line-height: 1.3; }
+    .contents summary { cursor: pointer; font-weight: 700; }
+    .contents ol { margin: .5rem 0 0; padding-left: 1.5rem; }
+    .contents li { margin: 0; }
+
+    .lead-image {
+      float: right;
+      width: 200px;
+      margin: .1rem 0 1rem 1.25rem;
+      padding: .5rem;
+      border: 1px solid #c8ccd1;
+      background: #f8f9fa;
+      text-align: center;
+      font-size: .8rem;
+    }
+
+    .lead-image svg { display: block; width: 100%; height: auto; margin-bottom: .4rem; }
+
+    .summary {
+      margin: 1rem 0;
+      padding: .75rem 1rem;
+      border: 1px solid #a2a9b1;
+      background: #f8f9fa;
+    }
+
+    .summary strong { display: block; margin-bottom: .25rem; }
+    .summary p { margin: 0; }
+
+    article { margin: 1.5rem 0; }
+    h2 {
+      margin: 0 0 .5rem;
+      padding-bottom: .2rem;
+      border-bottom: 1px solid #a2a9b1;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      line-height: 1.35;
+    }
+
     h3 { margin-bottom: .35rem; font-size: 1.05rem; }
     p, ul, ol { margin-top: .5rem; }
-    li + li { margin-top: .55rem; }
-    strong { color: #183c36; }
+    li + li { margin-top: .4rem; }
+    strong { color: #202122; }
 
-    .notice { margin-top: 1.25rem; background: #fff8f1; border-color: #f0d7c8; }
-    .notice h2 { color: #874322; }
+    .process {
+      margin: 1rem 0;
+      padding: .6rem 1rem .6rem 2rem;
+      border-left: 3px solid #a7d7f9;
+      background: #f8f9fa;
+    }
 
-    footer { padding: 0 0 2.5rem; color: var(--muted); font-size: .9rem; }
+    .process li { margin: .2rem 0; }
+
+    .notice {
+      margin: 1.5rem 0;
+      padding: .75rem 1rem;
+      border: 1px solid #c8ccd1;
+      background: #f8f9fa;
+      font-size: .92rem;
+    }
+
+    .notice h2 { font-size: 1.2rem; }
+
+    footer {
+      margin-top: 1.5rem;
+      padding: .75rem 0;
+      border-top: 1px solid #c8ccd1;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
     footer p { margin: 0; }
 
-    @media (max-width: 520px) {
-      .hero { padding-block: 2.5rem 2rem; }
-      .hero-inner, main, footer { width: min(100% - 1.25rem, 780px); }
-      main { padding-top: 1rem; }
+    @media (max-width: 760px) {
+      .page { display: block; width: min(100% - 1rem, 720px); padding-top: .5rem; }
+      .sidebar { display: none; }
+      .content { padding-inline: 1rem; }
+      .page-icon { width: 70px; height: 70px; }
+    }
+
+    @media (max-width: 480px) {
+      .page-header { gap: .5rem; }
+      .page-icon { width: 54px; height: 54px; }
+      .lead-image { width: 130px; margin-left: .75rem; }
+      .page-tools { justify-content: flex-start; }
     }
   </style>
 </head>
 <body>
-  <header class="hero">
-    <div class="hero-inner">
-      <div class="eyebrow">Wiki · Derecho Penal hondureño</div>
-      <h1>Suspensión de la ejecución de la pena</h1>
-      <p>Qué significa, cuándo puede concederse y qué ocurre si se cumplen —o se incumplen— sus condiciones.</p>
-    </div>
-  </header>
+  <div class="page">
+    <aside class="sidebar" aria-label="Navegación del artículo">
+      <div class="sidebar-title">Contenido</div>
+      <ul>
+        <li><a href="#concepto">Concepto</a></li>
+        <li><a href="#finalidad">Finalidad</a></li>
+        <li><a href="#requisitos">Requisitos</a></li>
+        <li><a href="#plazo">Plazo y medidas</a></li>
+        <li><a href="#efectos">Efectos</a></li>
+        <li><a href="#diferencia">Diferencias</a></li>
+        <li><a href="#fuentes">Fuentes</a></li>
+      </ul>
+      <div class="sidebar-title">Enlaces relacionados</div>
+      <ul>
+        <li><a href="https://www.tsc.gob.hn/biblioteca/index.php/codigos/830-codigo-penal-2019">Código Penal</a></li>
+      </ul>
+    </aside>
 
-  <main>
-    <section class="summary" aria-labelledby="en-breve">
-      <h2 id="en-breve">En pocas palabras</h2>
-      <p>Es una decisión judicial que suspende condicionalmente el cumplimiento de una pena de prisión. La condena no desaparece de inmediato: la persona debe cumplir un período de prueba y las medidas que el juzgado establezca. Si cumple las condiciones, puede acordarse la remisión definitiva de la pena; si las incumple en los supuestos previstos por la ley, la suspensión puede revocarse.</p>
-    </section>
+    <div class="content">
+      <div class="page-tools" aria-label="Tipo de página">
+        <span>Artículo</span><span>Leer</span><span>Ver fuentes</span>
+      </div>
+      <header class="page-header">
+        <h1>Suspensión de la ejecución de la pena</h1>
+        <svg class="page-icon" viewBox="0 0 100 100" role="img" aria-labelledby="justice-title justice-desc" xmlns="http://www.w3.org/2000/svg">
+          <title id="justice-title">Balanza de la justicia</title>
+          <desc id="justice-desc">Ilustración de una balanza, símbolo de la justicia.</desc>
+          <circle cx="50" cy="50" r="46" fill="#f8f9fa" stroke="#a2a9b1" stroke-width="2"/>
+          <g fill="none" stroke="#54595d" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+            <path d="M50 20v56M28 34h44M50 20l7 7H43zM40 77h20M34 84h32"/>
+            <path d="m28 34-12 24h24L28 34zm44 0L60 58h24L72 34z"/>
+            <path d="M16 58c2 6 6 9 12 9s10-3 12-9m20 0c2 6 6 9 12 9s10-3 12-9"/>
+          </g>
+        </svg>
+      </header>
+      <p class="subtitle">Derecho Penal de Honduras · Información general sobre los artículos 78–80 del Código Penal</p>
+
+      <main>
+        <nav class="contents" aria-label="Tabla de contenidos">
+          <details open>
+            <summary>Contenido</summary>
+            <ol>
+              <li><a href="#concepto">Concepto</a></li>
+              <li><a href="#finalidad">Finalidad</a></li>
+              <li><a href="#requisitos">Requisitos</a></li>
+              <li><a href="#plazo">Plazo y medidas</a></li>
+              <li><a href="#efectos">Efectos</a></li>
+              <li><a href="#diferencia">Suspensión y reemplazo</a></li>
+              <li><a href="#fuentes">Fuentes</a></li>
+            </ol>
+          </details>
+        </nav>
+
+        <figure class="lead-image">
+          <svg viewBox="0 0 220 155" role="img" aria-labelledby="court-title court-desc" xmlns="http://www.w3.org/2000/svg">
+            <title id="court-title">Edificio de un tribunal y balanza de justicia</title>
+            <desc id="court-desc">Ilustración sencilla de un tribunal con columnas y una balanza.</desc>
+            <rect width="220" height="155" fill="#f8f9fa"/>
+            <path d="M30 126h160M43 116h134M53 109h114" fill="none" stroke="#72777d" stroke-width="3"/>
+            <path d="m110 20 68 32H42z" fill="#eaecf0" stroke="#54595d" stroke-width="2"/>
+            <path d="M57 55h106v6H57z" fill="#c8ccd1"/>
+            <path d="M65 64v41h12V64zm30 0v41h12V64zm30 0v41h12V64zm30 0v41h12V64z" fill="#fff" stroke="#72777d" stroke-width="2"/>
+            <path d="M91 137v-17h38v17" fill="#c8ccd1" stroke="#54595d" stroke-width="2"/>
+            <path d="M110 31v54m-22-40h44m-22-14 7 7h-14z" fill="none" stroke="#a66a3f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="m88 45-9 17h18l-9-17zm44 0-9 17h18l-9-17z" fill="#d4a373" stroke="#a66a3f" stroke-width="2"/>
+            <path d="M79 62c2 5 5 7 9 7s7-2 9-7m26 0c2 5 5 7 9 7s7-2 9-7" fill="none" stroke="#a66a3f" stroke-width="2"/>
+          </svg>
+          <figcaption>Justicia y sistema judicial</figcaption>
+        </figure>
+
+        <section class="summary" aria-label="Resumen">
+          <strong>En pocas palabras</strong>
+          <p>Es una decisión judicial que suspende condicionalmente el cumplimiento de una pena de prisión. La condena no desaparece de inmediato: la persona debe cumplir un período de prueba y las medidas que el juzgado establezca. Si cumple las condiciones, puede acordarse la remisión definitiva de la pena; si las incumple en los supuestos previstos por la ley, la suspensión puede revocarse.</p>
+        </section>
+
+        <ol class="process" aria-label="Resumen del proceso">
+          <li><strong>El juzgado valora el caso:</strong> comprueba los requisitos y motiva su decisión.</li>
+          <li><strong>Período de prueba:</strong> se cumplen las condiciones y medidas ordenadas.</li>
+          <li><strong>Resultado:</strong> cumplir puede llevar a la remisión; incumplir puede llevar a la revocación.</li>
+        </ol>
 
     <article>
-      <h2>¿Qué es?</h2>
+      <h2 id="concepto">Concepto</h2>
       <p>El artículo 78 del Código Penal hondureño regula la <strong>suspensión condicional de la ejecución de la pena de prisión</strong>. El órgano jurisdiccional competente puede concederla mediante resolución motivada, cuando se reúnen los requisitos legales.</p>
       <p>No equivale a una absolución ni borra automáticamente la condena: suspende la ejecución de la prisión bajo condiciones. Tampoco debe confundirse con la suspensión condicional de la persecución penal, que es una figura procesal distinta.</p>
     </article>
 
     <article>
-      <h2>¿Para qué sirve?</h2>
+      <h2 id="finalidad">Finalidad</h2>
       <p>Permite que, en los casos que contempla la ley, la persona condenada permanezca en libertad durante el período de prueba en lugar de cumplir la pena de prisión en ese momento. La decisión es judicial, individualizada y no automática; puede considerar las circunstancias del hecho y de la persona, así como el riesgo de reiteración delictiva.</p>
     </article>
 
     <article>
-      <h2>Requisitos principales</h2>
+      <h2 id="requisitos">Requisitos</h2>
       <p>El artículo 78 establece requisitos que deben valorarse conjuntamente:</p>
       <ol>
         <li><strong>La pena de prisión no debe superar cinco años</strong>, tanto si se considera individualmente como si se suma con otras penas.</li>
@@ -130,13 +309,13 @@
     </article>
 
     <article>
-      <h2>Plazo y medidas</h2>
+      <h2 id="plazo">Plazo y medidas</h2>
       <p>La suspensión se condiciona a que la persona no vuelva a delinquir durante un <strong>plazo de cinco años</strong>, fijado por el órgano jurisdiccional previa audiencia de las partes. Durante ese período, el juzgado puede imponer una o varias medidas reguladoras de la libertad del artículo 84.</p>
       <p>Según el caso, las medidas pueden incluir presentarse periódicamente ante el juzgado, no acudir a determinados lugares, no acercarse ni comunicarse con ciertas personas, participar en programas formativos o someterse a tratamientos ambulatorios. La ley dispone que no pueden atentar contra la dignidad de la persona condenada.</p>
     </article>
 
     <article>
-      <h2>¿Qué efectos tiene?</h2>
+      <h2 id="efectos">Efectos</h2>
       <ul>
         <li><strong>La suspensión no alcanza a las penas accesorias</strong> ni a los demás efectos de la condena.</li>
         <li><strong>No elimina la responsabilidad civil</strong> derivada del delito.</li>
@@ -147,26 +326,27 @@
     </article>
 
     <article>
-      <h2>Suspensión y reemplazo de la pena: no son lo mismo</h2>
+      <h2 id="diferencia">Suspensión y reemplazo de la pena</h2>
       <p>En el reemplazo, la pena de prisión se sustituye por otra sanción conforme a las reglas del Código. En la suspensión condicional, la pena de prisión no se reemplaza: su ejecución queda suspendida y puede ordenarse si se revoca el beneficio.</p>
     </article>
 
     <article>
-      <h2>Fuentes</h2>
+      <h2 id="fuentes">Fuentes</h2>
       <ul>
         <li><a href="https://www.tsc.gob.hn/biblioteca/index.php/codigos/830-codigo-penal-2019">Biblioteca Virtual del Tribunal Superior de Cuentas: Código Penal</a> (incluye enlaces al texto y reformas).</li>
         <li><a href="https://www.tsc.gob.hn/web/leyes/Decreto_130-2017.pdf">Decreto 130-2017, Código Penal</a>, en el sitio del Tribunal Superior de Cuentas. Véanse especialmente los artículos 78, 79, 80 y 84.</li>
       </ul>
     </article>
 
-    <aside class="notice" aria-labelledby="aviso">
-      <h2 id="aviso">Aviso</h2>
-      <p>Esta página ofrece información general para fines educativos y no constituye asesoría jurídica. La aplicación de la ley depende de las circunstancias de cada caso. Antes de tomar decisiones, consulta el texto oficial vigente y busca orientación de un profesional del Derecho en Honduras.</p>
-    </aside>
-  </main>
+        <aside class="notice" aria-label="Aviso informativo">
+          <strong>Nota:</strong> Esta página ofrece información general para fines educativos y no constituye asesoría jurídica. La aplicación de la ley depende de las circunstancias de cada caso. Antes de tomar decisiones, consulta el texto oficial vigente y busca orientación de un profesional del Derecho en Honduras.
+        </aside>
+      </main>
 
-  <footer>
-    <p>Artículo informativo · Derecho Penal de Honduras</p>
-  </footer>
+      <footer>
+        <p>Última revisión: noviembre de 2026 · Fuentes oficiales enlazadas arriba.</p>
+      </footer>
+    </div>
+  </div>
 </body>
 </html>
